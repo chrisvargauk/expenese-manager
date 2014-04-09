@@ -1,0 +1,11 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager-2\/css\/reset\.scss}line{font-family:\000031}}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager-2\/css\/reset\.scss}line{font-family:\000037}}
+html, body {
+  height: 100%; }
+
+/*@ sourceMappingURL=reset.css.map */

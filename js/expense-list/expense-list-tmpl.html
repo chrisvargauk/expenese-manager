@@ -1,0 +1,18 @@
+<div class="list">
+  <div class="container">
+    <div class="pusher top"></div>
+    {{#rows}}
+    <div class="row">
+      <div class="category">{{category}}</div>
+      <div class="amount">£{{amount}}</div>
+      <div class="tap-area" data-id="{{id}}" data-cid="{{cid}}"></div>
+    </div>
+    {{/rows}}
+    <div class="pusher bottom">&nbsp;</div>
+  </div>
+</div>
+<div class="total">
+  <div class="category">Total</div>
+  <div class="amount">£{{total}}</div>
+  <div class="pusher"></div>
+</div>
