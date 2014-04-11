@@ -104,12 +104,6 @@ define(['jquery',
     // Init Exoense List (Collection)
     var cExpenseList = new CExpenseList();
 
-    // Init Nav
-    var vNav = new VNav({
-      model: new MNav()
-    });
-
-
     // Init Page Manager
     var mPageManager = new MPageManager();
     var vPageManger = new VPageManager({
@@ -151,7 +145,12 @@ define(['jquery',
     vPageManger.loadPage('history');
 
     // Select a page to start with
-    vPageManger.showPage('this-week')
+    vPageManger.showPage('this-week');
+
+    // Init Nav
+    var vNav = new VNav({
+      model: new MNav()
+    });
 
     // TODO: remove when goes to production
     window._reveal = {

@@ -28,8 +28,6 @@ define(['jquery', 'underscore', 'backbone', 'mustache',
         this.model.on('change', function (mExpense) {
           this.renderUpdate();
         }, this);
-
-        pubsub.subscribe('')
       },
 
       render: function () {

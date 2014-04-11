@@ -34,7 +34,7 @@ function ($, _, Backbone, Mustache,
       $('header').addEvt('tap', this.navToggle.bind(this));
       $('.current-week-chart').addEvt('tap', this.toggleSwipe.bind(this));
 
-      this.domRef.jqDragTarget = $('section.summary');
+      this.domRef.jqDragTarget = $('.page-manager');
       this.domRef.jqDragTarget.addEvt('drag', this.handleDragEvt.bind(this));
       this.domRef.jqDragTarget.addEvt('release', this.handleRelease.bind(this));
       // Fix Adroid bug - and make the whole nav a lot more difficult
@@ -118,7 +118,7 @@ function ($, _, Backbone, Mustache,
     handleSwipeEvent: function (evt, xDiff) {
       this.xDiffTotal += xDiff;
       console.log('xDiffTotal: ' + this.xDiffTotal);
-      if (this.xDiffTotal > 50) {
+      if (this.xDiffTotal > 20) {
         this.navOn();
         this.xDiffTotal = 0;
       }
