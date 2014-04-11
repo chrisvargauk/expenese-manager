@@ -5,16 +5,19 @@ var websql = (function () {
     db = openDatabase('websqlDatabase', '1.0', 'my first database', 2 * 1024 * 1024);
   };
 
-  var run = function (query, fn) {
+  var run = function (query, iterator, callbackDone) {
     db.transaction(function (tx) {
       var successHandler = function (tx, results) {
-        if (typeof fn == 'undefined')
-          return;
-
         var len = results.rows.length, i;
         for (i = 0; i < len; i++) {
-          fn( results.rows.item(i), results.rows.length, i);
+          if (typeof iterator == 'undefined')
+            break;
+
+          iterator( results.rows.item(i), results.rows.length, i);
         }
+
+        if (i === len && typeof callbackDone !== 'undefined')
+          callbackDone();
       };
 
       var errorHandler = function (transaction, error) {

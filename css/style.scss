@@ -10,7 +10,7 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 101;
 
   padding-top: 12%;
   .content {
@@ -41,7 +41,7 @@ section.current-week-chart {
   z-index: 1;
 
   // Pusher for header
-  padding-top: 12%;
+  //padding-top: 12%;
 
   border-top: 3px solid white;
 
@@ -251,4 +251,60 @@ section.page-manager {
 
     -webkit-transition: -webkit-transform 1000ms;
   }
+}
+
+.page {
+  padding-top: 12%;
+}
+
+.horizontal-overview-chart {
+  padding-top: 50%;
+  position: relative;
+
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  text-align: center;
+
+  .wrapper {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+
+    width: 10%;
+    padding-top: 0%;
+  }
+
+  .space {
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+
+  .bar {
+    background: greenyellow;
+    border-bottom: 1px solid green;
+  }
+}
+
+.horizontal-bar-chart-overview {
+  width: 100%;
+  height: 100%;
+}
+
+.page.history {
+  overflow-y: auto;
 }

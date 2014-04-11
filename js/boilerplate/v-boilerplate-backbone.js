@@ -8,7 +8,7 @@
 console.log('$ViewClassName is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!template/boilerplate-tmpl.html'
+  'text!boilerplate/boilerplate-tmpl.html'
 ],
 function ($, _, Backbone, Mustache,
           tmpl) {

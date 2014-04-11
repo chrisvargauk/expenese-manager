@@ -12,6 +12,8 @@ define(['jquery', 'underscore', 'backbone',
       pubsub.subscribe('deleteExpense', this.deleteExpense.bind(this) );
 
       this.bind('add remove', this.publishNewExpenseList);
+
+      this.createDatabaseIfNotExists( this.loadFromWebSQL.bind(this) );
     },
 
     addExpense: function (evtName, data) {
@@ -42,6 +44,32 @@ define(['jquery', 'underscore', 'backbone',
 
     publishNewExpenseList: function () {
       pubsub.publish('expenseListUpdate', this.toJSON());
+    },
+
+    createDatabaseIfNotExists: function (callbackDone) {
+      websql.createDatabase();
+
+      websql.run([
+        'CREATE TABLE IF NOT EXISTS expenselist (         ',
+        '  id INTEGER PRIMARY KEY AUTOINCREMENT,          ',
+        '  cid TEXT,                                      ',
+        '  category TEXT,                                 ',
+        '  amount TEXT,                                   ',
+        '  date INTEGER                                   ',
+        ')                                                '
+      ].join(''), undefined, callbackDone);
+    },
+
+    loadFromWebSQL: function () {
+      websql.run('SELECT * FROM expenselist', function (item) {
+        this.add(
+          {
+            id: item.id,
+            category: item.category,
+            amount: item.amount
+          }
+        );
+      }.bind(this));
     }
   });
 

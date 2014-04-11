@@ -28,7 +28,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'History',
           action: function () {
             console.log('History btn');
-            pubsub.publish('showPage', {idPage: 'this-week2'});
+            pubsub.publish('showPage', {idPage: 'history'});
           }
         },
         {

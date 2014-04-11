@@ -20,13 +20,16 @@ define(['jquery',
         'expense-list/v-expense-list',
         'expense-list/c-expense-list',
 
-        'footer/vFooter',
+        'footer/v-footer',
 
-        'history/v-history',
+        'horizontal-overview-chart/v-horizontal-bar-chart-overview',
+        'horizontal-overview-chart/v-horizontal-overview-chart',
+        'horizontal-overview-chart/m-horizontal-overview-chart',
 
         'bootstrap',
         'lib/websql',
-        'lib/pubsub-global'
+        'lib/pubsub-global',
+        'lib/polyfill-get-week'
   ], function( $,
                _,
                Backbone,
@@ -49,12 +52,16 @@ define(['jquery',
 
                VFooter,
 
-               VHistory
+               VHorizontalBarChartOverview,
+               VHorizontalOverviewChart,
+               MHorizontalOverviewChart
   ){
   var App = function () {
     console.log('App is instantiated.');
 
-    var initWebSQL = function () {
+    var resetWebSQL = function () {
+      websql.deleteTable('expenselist');
+
       websql.createDatabase();
 
       websql.run([
@@ -66,19 +73,27 @@ define(['jquery',
         '  date INTEGER                                   ',
         ')                                                '
       ].join(''));
-    };
 
-    var loadFromWebSQL = function () {
-      websql.run('SELECT * FROM expenselist', function (item) {
-        console.log(item)
-        cExpenseList.add(
-          {
-            id: item.id,
-            category: item.category,
-            amount: item.amount
-          }
-        );
-      });
+      var getRandomArbitrary = function(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      var categoryList = ['Hazev', 'TESCO', 'Brera', 'Car', 'Gym', 'GooglePlay'];
+
+      var decrementByNumDay = 0;
+      for(var i= 0; i<50; i++) {
+        decrementByNumDay += Math.round(Math.random(0, 1));
+
+        var dateCurrent = Date.now() - decrementByNumDay * 1000 * 60 * 60 * 24;
+        var categoryListIndex = Math.round(getRandomArbitrary(0, (categoryList.length-1)));
+        console.log(categoryListIndex);
+        var expense = {
+          category: categoryList[categoryListIndex],
+          amount: Math.round(Math.random() / 3 * 100),
+          date: dateCurrent
+        }
+        pubsub.publish('addExpense', expense);
+      };
     };
 
     // Init Modal Window
@@ -86,29 +101,25 @@ define(['jquery',
       model: new MModal()
     });
 
-    // Init WebSQL
-    initWebSQL();
-
     // Init Exoense List (Collection)
     var cExpenseList = new CExpenseList();
-
-    // Load Saved Expenses
-    loadFromWebSQL();
-
-    var mCurrentWeekChart = new MCurrentWeekChart();
 
     // Init Nav
     var vNav = new VNav({
       model: new MNav()
     });
 
+
+    // Init Page Manager
     var mPageManager = new MPageManager();
     var vPageManger = new VPageManager({
       model: mPageManager
     });
 
+    // Reg This Week page components
     vPageManger.regPage( 'this-week', function (idPage) {
-
+      //  Load Current Week Chart
+      var mCurrentWeekChart = new MCurrentWeekChart();
       var vCurrentWeekChart = new VCurrentWeekChart({
         model: mCurrentWeekChart,
         idPage: idPage
@@ -127,24 +138,29 @@ define(['jquery',
       });
     });
 
-    vPageManger.regPage( 'this-week2', function (idPage) {
-      var vHistory = new VHistory({
+    // Reg History page components
+    vPageManger.regPage( 'history', function (idPage) {
+      // Init Horizontal Bar Charts
+      var vHorizontalBarChartOverview = new VHorizontalBarChartOverview({
         idPage: idPage
       });
     });
 
+    // Load All Pages - in this context this makes sense
     vPageManger.loadPage('this-week');
-    vPageManger.loadPage('this-week2');
+    vPageManger.loadPage('history');
 
+    // Select a page to start with
     vPageManger.showPage('this-week')
 
     // TODO: remove when goes to production
     window._reveal = {
       cExpenseList: cExpenseList,
-      mCurrentWeekChart: mCurrentWeekChart,
       vPageManger: vPageManger
     };
 
+    // TODO: remove when goes to production
+    window.resetWebSQL = resetWebSQL;
   };
 
   return App;

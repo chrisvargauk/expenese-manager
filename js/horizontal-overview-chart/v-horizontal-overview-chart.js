@@ -1,21 +1,21 @@
 /**
  * Created with JetBrains WebStorm.
  * User: krisztianvarga
- * Date: 08/04/2014
- * Time: 12:17
+ * Date: 10/04/2014
+ * Time: 09:42
  */
 
-console.log('VHistory is loaded');
+console.log('VHorizontalOverviewChart is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!boilerplate/boilerplate-tmpl.html'
+  'text!horizontal-overview-chart/t-horizontal-overview-chart.html'
 ],
 function ($, _, Backbone, Mustache,
           tmpl) {
 
-  var VHistory = Backbone.View.extend({
+  var VHorizontalOverviewChart = Backbone.View.extend({
     initialize: function () {
-      console.log('VHistory initialized');
+      console.log('VHorizontalOverviewChart initialized');
 
       // Render Wrapper (or static structure)
       this.render();
@@ -31,11 +31,18 @@ function ($, _, Backbone, Mustache,
     },
 
     render: function () {
-      var jqWrapper = $('<div data-id="history" class="history"></div>');
+      var jqWrapper = $('<div data-id="horizontal-overview-chart" class="horizontal-overview-chart"></div>');
 //      jqWrapper.appendTo('body');
-      this.html = jqWrapper;
-      pubsub.publish('renderPage', {view: this});
       this.el = jqWrapper;
+
+      if (typeof this.options.jqRenderTarget === 'undefined') {
+        this.html = jqWrapper;
+        pubsub.publish('renderPage', {view: this});
+      } else {
+        this.options.jqRenderTarget.append(jqWrapper);
+      }
+
+      this.lockWidth();
 
       this.addEventListener();
 
@@ -43,9 +50,7 @@ function ($, _, Backbone, Mustache,
     },
 
     renderUpdate: function () {
-      var dataTmpl = {
-        wrd: 'world'
-      };
+      var dataTmpl = this.model.toJSON();
 
       var compTmpl = Mustache.render(tmpl, dataTmpl);
 
@@ -78,8 +83,12 @@ function ($, _, Backbone, Mustache,
         case 'some-other-item':
           break;
       }
+    },
+
+    lockWidth: function () {
+      this.el[0].style.width = window.innerWidth + 'px';
     }
   });
 
-  return VHistory;
+  return VHorizontalOverviewChart;
 });

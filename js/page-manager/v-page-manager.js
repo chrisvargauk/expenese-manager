@@ -79,7 +79,7 @@ function ($, _, Backbone, Mustache,
     },
 
     addPageContainer: function (idPage) {
-      var jqPageContainer = $('<div class="page" data-id-page="' + idPage + '"></div>');
+      var jqPageContainer = $('<div class="page ' + idPage + '" data-id-page="' + idPage + '"></div>');
       this.el.append( jqPageContainer );
 
       return jqPageContainer;
