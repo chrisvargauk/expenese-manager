@@ -20,7 +20,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'This Week',
           action: function () {
             console.log('This Week btn');
-            pubsub.publish('showPage', {idPage: 'this-week'});
+            // pubsub.publish('showPage', {idPage: 'this-week'});
           }
         },
         {
@@ -28,7 +28,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'History',
           action: function () {
             console.log('History btn');
-            pubsub.publish('showPage', {idPage: 'history'});
+            // pubsub.publish('showPage', {idPage: 'history'});
           }
         },
         {

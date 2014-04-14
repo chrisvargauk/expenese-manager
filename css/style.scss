@@ -211,7 +211,7 @@ section.nav {
       -webkit-transform: translate(0, 0);
     }
 
-    button {
+    a {
       display: block;
       width: 100%;
       border: none;
@@ -222,6 +222,10 @@ section.nav {
       padding-bottom: 10%;
       color: #404040;
       font-size: 1.2em;
+
+      text-decoration: none;
+      font-weight: normal;
+      text-align: center;
     }
   }
 }

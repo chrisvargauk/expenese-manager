@@ -141,6 +141,10 @@ function ($, _, Backbone, Mustache,
       var pageIncoming = this.getPage(idPage),
           idPageActive = this.model.get('idPageActive');
 
+      if (idPage === 'default') {
+        idPage = this.model.get('idPageDefault');
+      }
+
       // Do nothing if user whats to go to current page again
       if (idPageActive === idPage )
         return false;

@@ -16,6 +16,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
       pages: [],
       pageContainers: [],
       idPageActive: 'none',
+      idPageDefault: 'this-week',
       ctrPageContainer: -1
     },
     toJSON: function() {

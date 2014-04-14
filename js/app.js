@@ -13,6 +13,7 @@ define(['jquery',
 
         'page-manager/v-page-manager',
         'page-manager/m-page-manager',
+        'page-manager/r-page-manager',
 
         'current-week-chart/v-current-week-chart',
         'current-week-chart/m-current-week-chart',
@@ -43,6 +44,7 @@ define(['jquery',
 
                VPageManager,
                MPageManager,
+               RPageManager,
 
                VCurrentWeekChart,
                MCurrentWeekChart,
@@ -151,6 +153,8 @@ define(['jquery',
     var vNav = new VNav({
       model: new MNav()
     });
+
+    Backbone.history.start();
 
     // TODO: remove when goes to production
     window._reveal = {

@@ -17,7 +17,7 @@ define(['jquery', 'underscore', 'backbone', 'mustache',
         this.render();
 
         this.regDomRef();
-        this.addEventListener();
+//        this.addEventListener();
       },
 
       render: function () {
@@ -47,6 +47,8 @@ define(['jquery', 'underscore', 'backbone', 'mustache',
             amount: this.dom.$inputAmount.val(),
             date: Date.now()
           });
+
+          category: this.dom.$inputCategory.empty()
         }.bind(this));
       }
     });
