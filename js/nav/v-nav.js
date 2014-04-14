@@ -130,7 +130,11 @@ function ($, _, Backbone, Mustache,
 //        return false;
 
       if (this.swipe === 'on') {
-        this.scrollTop += yDiff;
+        if (typeof this.domRef.jqScrollContainer === 'undefined') {
+          this.domRef.jqScrollContainer = this.domRef.jqDragTarget.find('.container');
+        }
+
+        this.scrollTop += yDiff * 1.5;
 
         // If user scrolls to high up
         if (this.scrollTop > 0 ) {
@@ -138,7 +142,8 @@ function ($, _, Backbone, Mustache,
           return false;
         }
 
-        this.domRef.jqDragTarget.find('.container').css('-webkit-transform', 'translate(0, '+this.scrollTop+'px)');
+//        this.domRef.jqDragTarget.find('.container').css('-webkit-transform', 'translate(0, '+this.scrollTop+'px)');
+        this.domRef.jqScrollContainer.css('-webkit-transform', 'translate(0, '+this.scrollTop+'px)');
         console.log('this.scrollTop: ' + this.scrollTop);
       }
     },

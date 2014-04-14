@@ -154,8 +154,8 @@ function ($, _, Backbone, Mustache,
         var pageActive = this.getPage(idPageActive),
           pageIncoming = this.getPage(idPage);
 
-        pageActive.pageContainer.addClass('outgoing');
         pageIncoming.pageContainer.addClass('incoming');
+        pageActive.pageContainer.addClass('outgoing');
 
         // Make Incoming Page visible
         pageIncoming.pageContainer.addClass('active');
@@ -171,7 +171,7 @@ function ($, _, Backbone, Mustache,
           this.model.set('idPageActive', idPage);
 
           // Use 'webkitTransitionEnd' instead of the following
-          setTimeout(clearArtifacts, 1000);
+          setTimeout(clearArtifacts, 2000);
         }.bind(this);
 
         var clearArtifacts = function () {
@@ -185,7 +185,7 @@ function ($, _, Backbone, Mustache,
           pageActive.pageContainer.removeClass('active');
         }.bind(this);
 
-        setTimeout(animate, 600);
+        setTimeout(animate, 500);
       }
     },
 
