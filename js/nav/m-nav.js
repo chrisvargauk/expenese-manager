@@ -20,6 +20,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'This Week',
           action: function () {
             console.log('This Week btn');
+            pubsub.publish('navStartSlideOut');
             // pubsub.publish('showPage', {idPage: 'this-week'});
           }
         },
@@ -28,6 +29,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'History',
           action: function () {
             console.log('History btn');
+            pubsub.publish('navStartSlideOut');
             // pubsub.publish('showPage', {idPage: 'history'});
           }
         },
@@ -36,6 +38,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'Settings',
           action: function () {
             console.log('Settings btn');
+            pubsub.publish('navStartSlideOut');
           }
         }
       ]

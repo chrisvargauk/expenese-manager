@@ -26,13 +26,9 @@ function ($, _, Backbone, Mustache,
 
       this.domRef.jqNav = this.domRef.el.find('nav');
 
-      pubsub.subscribe('startSlideIn', this.startSlideIn.bind(this));
-      pubsub.subscribe('startSlideOut', this.startSlideOut.bind(this));
+      pubsub.subscribe('navStartSlideIn',  this.startSlideIn.bind(this));
+      pubsub.subscribe('navStartSlideOut', this.startSlideOut.bind(this));
       pubsub.subscribe('toggleNav', this.toggleNav.bind(this));
-
-      // Activate Nav if user taps on header
-      // Todo: Replace this with pubsub event triggerd from header
-      $('header').addEvt('tap', this.toggleNav.bind(this));
 
       this.domRef.el.on('webkitTransitionEnd', this.transitionEnd.bind(this));
 
@@ -89,11 +85,12 @@ function ($, _, Backbone, Mustache,
 
         button.action();
       }.bind(this));
-
-      this.startSlideOut();
     },
 
     startSlideIn: function () {
+      if (this.state === 'slidingIn' || this.state === 'on')
+        return false;
+
       this.state = 'slidingIn';
       this.domRef.el.addClass('enabled');
 
@@ -109,16 +106,22 @@ function ($, _, Backbone, Mustache,
     },
 
     startSlideOut: function () {
+      if (this.state === 'slidingOut' || this.state === 'off')
+        return false;
+
       this.state = 'slidingOut';
       this.domRef.el.removeClass('on');
       this.domRef.jqNav.removeClass('on');
 
+      pubsub.publish('header.startSlideIn');
+
       // Clean up if animation gets canceled or fails
       this.safetyTransitionEndTimer = setTimeout(function () {
         console.log('safetyTransitionEndTimer kicked in - off');
+//        this.domRef.el.removeClass('on');
         this.state = 'off';
         this.domRef.el.removeClass('enabled');
-      }.bind(this), 1000);
+      }.bind(this), 500);
     },
 
     finishSlideOut: function () {

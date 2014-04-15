@@ -147,7 +147,7 @@ function ($, _, Backbone, Mustache,
             return false;
 
           $(Object.keys(week)).each(function(index, key) {
-            week[key+'Percent'] = Math.floor(week[key] / (week.total/100));
+            week[key+'Percent'] = Math.floor(week[key] / (week.total/100) * 0.7);
           });
 
           console.log(week);

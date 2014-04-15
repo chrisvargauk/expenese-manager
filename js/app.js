@@ -15,6 +15,8 @@ define(['jquery',
         'page-manager/m-page-manager',
         'page-manager/r-page-manager',
 
+        'header/v-header',
+
         'current-week-chart/v-current-week-chart',
         'current-week-chart/m-current-week-chart',
 
@@ -45,6 +47,8 @@ define(['jquery',
                VPageManager,
                MPageManager,
                RPageManager,
+
+               VHeader,
 
                VCurrentWeekChart,
                MCurrentWeekChart,
@@ -102,6 +106,8 @@ define(['jquery',
     var vModal = new VModal({
       model: new MModal()
     });
+
+    var vHeader = new VHeader();
 
     // Init Exoense List (Collection)
     var cExpenseList = new CExpenseList();

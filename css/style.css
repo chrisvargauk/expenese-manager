@@ -1,14 +1,38 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\000031}}
+@font-face {
+  font-family: 'icomoon';
+  src: url("font/icomoon.eot?tddahw");
+  src: url("font/icomoon.eot?#iefixtddahw") format("embedded-opentype"), url("font/icomoon.woff?tddahw") format("woff"), url("font/icomoon.ttf?tddahw") format("truetype"), url("font/icomoon.svg?tddahw#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000312}}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000326}}
+.icon-menu:before {
+  content: "\6d"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000330}}
 dialog {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000336}}
 .scroller {
   transition: -webkit-transform 300ms; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000340}}
 header {
   background: #404040;
   position: absolute;
@@ -16,20 +40,39 @@ header {
   right: 0;
   z-index: 101;
   padding-top: 12%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000349}}
   header .content {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.2em; }
+    color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000358}}
+    header .content .title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000370}}
+    header .content .icon-menu {
+      float: left;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      font-size: 2em;
+      line-height: 1.5em;
+      -webkit-transition: -webkit-transform 300ms; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000387}}
+      header .content .icon-menu.active {
+        -webkit-transform: translateX(-50%); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000397}}
 section.current-week-chart {
   background: white;
   border-top: 3px solid white;
@@ -39,20 +82,20 @@ section.current-week-chart {
   z-index: 1;
   border-top: 3px solid white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003111}}
   section.current-week-chart .bar-days {
     background: lightgreen;
     padding-top: 8%;
     width: 90%;
     border-bottom: 3px solid white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003118}}
   section.current-week-chart .bar-money {
     background: lightgreen;
     padding-top: 8%;
     width: 30%;
     border-bottom: 3px solid white; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003128}}
 section.summary {
   font-size: 1.6em;
   line-height: 2.0em;
@@ -61,52 +104,52 @@ section.summary {
   left: 0;
   right: 0;
   bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003138}}
   section.summary .list {
     height: 100%;
     overflow-y: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003144}}
     section.summary .list .pusher.top {
       padding-top: 30%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003147}}
     section.summary .list .pusher.bottom {
       padding-top: 16%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003153}}
   section.summary .row {
     border-bottom: 1px solid graytext;
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003158}}
   section.summary .category {
     width: 50%;
     float: left;
     padding-left: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003164}}
   section.summary .amount {
     width: 50%;
     float: right;
     text-align: right;
     padding-right: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003171}}
   section.summary .tap-area {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003179}}
   section.summary .total {
     background: white;
     position: absolute;
     width: 100%;
     bottom: 0;
     border-top: 1px solid graytext; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003188}}
     section.summary .total .pusher {
       padding-top: 16%;
       float: left;
       width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003196}}
 footer {
   border-top: 1px solid graytext;
   position: absolute;
@@ -116,21 +159,21 @@ footer {
   z-index: 1;
   width: 100%;
   padding-top: 16%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003148}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003207}}
   footer .content {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003215}}
   footer input[type=text] {
     width: 31%;
     height: 80%;
     float: left;
     margin: 1.4% 0.5% 0 1.4%;
     font-size: 1.2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003224}}
   footer button.add {
     width: 31%;
     height: 80%;
@@ -138,11 +181,11 @@ footer {
     margin: 1.4% 1.4% 0 0.5%;
     font-size: 1.2em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003234}}
 section.nav {
   display: none;
   -webkit-transition: opacity 300ms; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003235}}
   section.nav.bg {
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -153,13 +196,13 @@ section.nav {
     z-index: 100;
     margin: 0;
     opacity: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003246}}
     section.nav.bg.on {
       opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003251}}
   section.nav.enabled {
     display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003257}}
   section.nav nav {
     background: white;
     position: absolute;
@@ -170,10 +213,10 @@ section.nav {
     padding-left: 1%;
     padding-right: 1%;
     padding-top: 12%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003270}}
     section.nav nav.on {
       -webkit-transform: translate(0, 0); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003274}}
     section.nav nav a {
       display: block;
       width: 100%;
@@ -189,14 +232,14 @@ section.nav {
       font-weight: normal;
       text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003293}}
 section.page-manager {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003300}}
   section.page-manager .page {
     position: absolute;
     top: 0;
@@ -207,33 +250,33 @@ section.page-manager {
     height: 100%;
     opacity: 0;
     z-index: -1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003316}}
     section.page-manager .page.active {
       opacity: 1;
       z-index: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003262}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003321}}
     section.page-manager .page.incoming {
       -webkit-transform: translate(100%, 0); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003324}}
       section.page-manager .page.incoming.animation {
         -webkit-transform: translate(0%, 0);
         -webkit-transition: -webkit-transform 1000ms; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003272}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003331}}
     section.page-manager .page.outgoing.animation {
       opacity: 0;
       -webkit-transition: opacity 300ms; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003342}}
 .page {
   padding-top: 12%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003346}}
 .horizontal-overview-chart {
   padding-top: 50%;
   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003293}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003352}}
   .horizontal-overview-chart .content {
     position: absolute;
     top: 0;
@@ -243,30 +286,30 @@ section.page-manager {
     display: flex;
     justify-content: center;
     align-items: flex-end; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003307}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003366}}
   .horizontal-overview-chart .wrapper {
     height: 100%;
     display: flex;
     flex-flow: column;
     width: 10%;
     padding-top: 0%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003375}}
   .horizontal-overview-chart .space {
     flex: 1 1 auto;
     display: flex;
     flex-flow: column;
     justify-content: flex-end; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003383}}
   .horizontal-overview-chart .bar {
     background: greenyellow;
     border-bottom: 1px solid green; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003389}}
 .horizontal-bar-chart-overview {
   width: 100%;
   height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\00003394}}
 .page.history {
   overflow-y: auto; }
 

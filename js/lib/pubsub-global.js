@@ -11,7 +11,8 @@ var pubsub = (function (){
   var publish = function (evt, data) {
     list.forEach(function (subscriber) {
       if (subscriber.evt === evt) {
-        subscriber.fn(evt, data)
+        console.warn('Pubsub Evt Fired: ' + evt);
+        subscriber.fn(evt, data);
       }
     });
   };
