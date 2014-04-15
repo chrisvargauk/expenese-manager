@@ -26,24 +26,13 @@ function ($, _, Backbone, Mustache,
 
       this.domRef.jqNav = this.domRef.el.find('nav');
 
-      pubsub.subscribe('navOn', this.navOn.bind(this));
-      pubsub.subscribe('navOff', this.navOff.bind(this));
-      pubsub.subscribe('navToggle', this.navToggle.bind(this));
+      pubsub.subscribe('startSlideIn', this.startSlideIn.bind(this));
+      pubsub.subscribe('startSlideOut', this.startSlideOut.bind(this));
+      pubsub.subscribe('toggleNav', this.toggleNav.bind(this));
 
       // Activate Nav if user taps on header
-      $('header').addEvt('tap', this.navToggle.bind(this));
-      $('.current-week-chart').addEvt('tap', this.toggleSwipe.bind(this));
-
-      this.domRef.jqDragTarget = $('.page-manager');
-      this.domRef.jqDragTarget.addEvt('drag', this.handleDragEvt.bind(this));
-      this.domRef.jqDragTarget.addEvt('release', this.handleRelease.bind(this));
-      // Fix Adroid bug - and make the whole nav a lot more difficult
-      this.domRef.jqDragTarget.on('touchstart', function (evt) {
-        if (this.swipe === 'on') {
-          // This make mousemove to be triggered continuously if you move your finger on the screen. (and disables 'overflow: scroll' :( )
-          evt.preventDefault();
-        }
-      }.bind(this));
+      // Todo: Replace this with pubsub event triggerd from header
+      $('header').addEvt('tap', this.toggleNav.bind(this));
 
       this.domRef.el.on('webkitTransitionEnd', this.transitionEnd.bind(this));
 
@@ -101,62 +90,11 @@ function ($, _, Backbone, Mustache,
         button.action();
       }.bind(this));
 
-      this.navOff();
+      this.startSlideOut();
     },
 
-    handleDragEvt: function (evt) {
-      var xDiff = this.domRef.jqDragTarget[0].Tap.DragDetails.xDiff;
-      var yDiff = this.domRef.jqDragTarget[0].Tap.DragDetails.yDiff;
-
-      if ( Math.abs(xDiff) > Math.abs(yDiff) ) {
-        this.handleSwipeEvent(evt, xDiff);
-      }  else {
-        this.handleScrollEvent(evt, yDiff);
-      }
-    },
-
-    handleSwipeEvent: function (evt, xDiff) {
-      this.xDiffTotal += xDiff;
-      console.log('xDiffTotal: ' + this.xDiffTotal);
-      if (this.xDiffTotal > 20) {
-        this.navOn();
-        this.xDiffTotal = 0;
-      }
-    },
-
-    handleScrollEvent: function (evt, yDiff) {
-//      // Avoid beeing triggerd twice because user drags twice as long as necessary
-//      if (this.state !== 'off')
-//        return false;
-
-      if (this.swipe === 'on') {
-        if (typeof this.domRef.jqScrollContainer === 'undefined') {
-          this.domRef.jqScrollContainer = this.domRef.jqDragTarget.find('.container');
-        }
-
-        this.scrollTop += yDiff * 1.5;
-
-        // If user scrolls to high up
-        if (this.scrollTop > 0 ) {
-          this.scrollTop = 0;
-          return false;
-        }
-
-//        this.domRef.jqDragTarget.find('.container').css('-webkit-transform', 'translate(0, '+this.scrollTop+'px)');
-        this.domRef.jqScrollContainer.css('-webkit-transform', 'translate(0, '+this.scrollTop+'px)');
-        console.log('this.scrollTop: ' + this.scrollTop);
-      }
-    },
-
-    handleRelease: function (evt) {
-      // Avoid swipes being add up
-      this.xDiffTotal = 0;
-    },
-
-    navOn: function () {
-      console.log('Loading');
-
-      this.state = 'loading';
+    startSlideIn: function () {
+      this.state = 'slidingIn';
       this.domRef.el.addClass('enabled');
 
       // Give a change for the animation to kick in
@@ -166,13 +104,16 @@ function ($, _, Backbone, Mustache,
       }.bind(this), 10);
     },
 
-    navOff: function () {
-      console.log('Quiting');
+    finishSlideIn: function () {
+      this.state = 'on';
+    },
 
-      this.state = 'quiting';
+    startSlideOut: function () {
+      this.state = 'slidingOut';
       this.domRef.el.removeClass('on');
       this.domRef.jqNav.removeClass('on');
 
+      // Clean up if animation gets canceled or fails
       this.safetyTransitionEndTimer = setTimeout(function () {
         console.log('safetyTransitionEndTimer kicked in - off');
         this.state = 'off';
@@ -180,44 +121,30 @@ function ($, _, Backbone, Mustache,
       }.bind(this), 1000);
     },
 
-    state: 'off',
+    finishSlideOut: function () {
+      this.state = 'off';
+      this.domRef.el.removeClass('enabled');
 
-    navToggle: function () {
+      clearTimeout( this.safetyTransitionEndTimer );
+    },
+
+    toggleNav: function () {
       if (this.state === 'on') {
-        this.navOff();
-      } else {
-        this.navOn();
+        this.startSlideOut();
+      } else if (this.state === 'off') {
+        this.startSlideIn();
       }
     },
 
     transitionEnd: function (evt) {
-      console.log("CSS Property completed, this.state = " + this.state);
-
-      if (this.state === 'loading') {
-        console.log('on');
-        this.state = 'on';
-      } else if (this.state === 'quiting') {
-        console.log('off');
-        this.state = 'off';
-        this.domRef.el.removeClass('enabled');
-
-        clearTimeout( this.safetyTransitionEndTimer );
+      if (this.state === 'slidingIn') {
+        this.finishSlideIn();
+      } else if (this.state === 'slidingOut') {
+        this.finishSlideOut();
       }
     },
 
-    toggleSwipe: function () {
-      console.log('toggleSwipe');
-
-      if (this.swipe === 'on') {
-        this.swipe = 'off';
-      } else {
-        this.swipe = 'on';
-      }
-    },
-
-    xDiffTotal: 0,
-    scrollTop: 0,
-    swipe: 'off'
+    state: 'off'
   });
 
   return VNav;

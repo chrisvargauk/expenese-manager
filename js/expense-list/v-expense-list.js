@@ -13,16 +13,12 @@ function ($, _, Backbone, Mustache,
 
       this.render();
 
-      this.model.on('add remove', function (mExpense) {
-        this.renderUpdate();
-      }, this);
-
       // Run renderUpdate to render the basics if WebSQL is empty
       this.renderUpdate();
 
-      window._reveall = {
-        domVSummarySection: this.dom
-      }
+      this.model.on('add remove', function (mExpense) {
+        this.renderUpdate();
+      }, this);
     },
 
     render: function () {
