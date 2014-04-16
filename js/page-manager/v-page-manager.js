@@ -8,7 +8,7 @@
 console.log('PageManager is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!page-manager/page-manager-tmpl.html'
+  'text!page-manager/t-page-manager.html'
 ],
 function ($, _, Backbone, Mustache,
           tmpl) {

@@ -1,5 +1,5 @@
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!footer/footer-tmpl.html',
+  'text!footer/t-footer.html',
   'js/expense-list/m-expense.js',
 
   'tap',

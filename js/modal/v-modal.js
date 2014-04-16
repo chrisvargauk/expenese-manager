@@ -1,5 +1,5 @@
 define(['jquery', 'underscore', 'backbone', 'mustache',
-        'text!modal/modal-tmpl.html'
+        'text!modal/t-modal.html'
   ],
   function ($, _, Backbone, Mustache,
             modalTmpl) {

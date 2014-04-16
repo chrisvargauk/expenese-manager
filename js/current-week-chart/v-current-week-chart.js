@@ -8,7 +8,7 @@
 console.log('VCurrentWeekChart is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!current-week-chart/current-week-chart-tmpl.html'
+  'text!current-week-chart/t-current-week-chart.html'
 ],
   function ($, _, Backbone, Mustache,
             tmpl) {

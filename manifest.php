@@ -22,6 +22,8 @@ function create_manifest($folder) {
 		if ($file -> IsFile() &&
 			$file != "./create-maifest.php" &&
 			strpos($file,'.idea') == false &&
+			strpos($file,'.git') == false &&
+			strpos($file,'.sass-cache') == false &&
 			substr($file -> getFilename(), 0, 1) != ".") {
 			// Replace spaces with %20 or it will break
 			echo str_replace(' ', '%20', $file) . "\n";

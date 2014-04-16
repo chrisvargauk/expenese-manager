@@ -1,0 +1,56 @@
+header {
+  background: #404040;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 101;
+
+  padding-top: 12%;
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    color: white;
+
+    .title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-menu {
+      //position: absolute;
+      //top: 0;
+      //bottom: 0;
+      //z-index: 1;
+
+      float: left;
+      position: relative;
+      z-index: 1;
+
+
+      display: flex;
+      align-items: center;
+
+      font-size: 2em;
+      line-height: 1.5em;
+
+      &.active{
+        -webkit-transform: translateX(-50%);
+      }
+      -webkit-transition: -webkit-transform 300ms;
+    }
+  }
+
+  //border-bottom: 1px solid gray;
+}

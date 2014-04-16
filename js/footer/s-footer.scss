@@ -1,0 +1,37 @@
+footer {
+  border-top: 1px solid graytext;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  width: 100%;
+  padding-top: 16%;
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  input[type=text] {
+    width: 31%;
+    height: 80%;
+    float: left;
+    margin: 1.4% 0.5% 0 1.4%;
+
+    font-size: 1.2em;
+  }
+
+  button.add {
+    width: 31%;
+    height: 80%;
+    float: right;
+    margin: 1.4% 1.4% 0 0.5%;
+
+    font-size: 1.2em;
+  }
+}

@@ -8,7 +8,7 @@
 console.log('nav is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!nav/nav-tmpl.html'
+  'text!nav/t-nav.html'
 ],
 function ($, _, Backbone, Mustache,
           tmpl) {

@@ -1,0 +1,30 @@
+section.current-week-chart {
+  background: white;
+  border-top: 3px solid white;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  // Pusher for header
+  //padding-top: 12%;
+
+  border-top: 3px solid white;
+
+  .bar-days {
+    background: lightgreen;
+    padding-top: 8%;
+    width: 90%;
+    border-bottom: 3px solid white;
+  }
+
+  .bar-money {
+    background: lightgreen;
+    padding-top: 8%;
+    width: 30%;
+    border-bottom: 3px solid white;
+  }
+
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
