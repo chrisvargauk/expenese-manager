@@ -203,7 +203,7 @@ function ($, _, Backbone, Mustache,
 
       var dayList = [],
         week;
-      websql.run('SELECT * FROM expenselist', function (day) {
+      websql.run('SELECT * FROM expenselist  ORDER BY date DESC', function (day) {
         console.log(day);
         dayList.push( day );
       }, processDayList);
