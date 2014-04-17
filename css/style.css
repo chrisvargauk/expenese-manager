@@ -386,7 +386,7 @@ section.page-manager {
 .page {
   padding-top: 12%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000315}}
-  .page .history {
+  .page.history {
     overflow-y: auto; }
 
 /*@ sourceMappingURL=style.css.map */

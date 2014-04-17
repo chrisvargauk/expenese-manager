@@ -12,7 +12,7 @@
 .page {
   padding-top: 12%;
 
-  .history {
+  &.history {
     overflow-y: auto;
   }
 }
