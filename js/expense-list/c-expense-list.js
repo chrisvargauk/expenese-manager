@@ -61,7 +61,13 @@ define(['jquery', 'underscore', 'backbone',
     },
 
     loadFromWebSQL: function () {
-      websql.run('SELECT * FROM expenselist', function (item) {
+      var dNow = new Date(),
+          dLastMidnight = new Date(dNow.getFullYear(), dNow.getMonth(), dNow.getDate()),
+          dayOfWeek = dNow.getDay(),
+          dMonday = new Date(dLastMidnight.getTime() - (dayOfWeek-1) * 1000 * 60 * 60 * 24),
+          timestampMonday = dMonday.getTime();
+
+      websql.run('SELECT * FROM expenselist WHERE date > ' + timestampMonday, function (item) {
         this.add(
           {
             id: item.id,
