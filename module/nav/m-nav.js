@@ -37,7 +37,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           id: 'setting',
           label: 'Settings',
           action: function () {
-            console.log('Settings btn');
+            console.log('Settings btn clicked');
             pubsub.publish('navStartSlideOut');
           }
         }
