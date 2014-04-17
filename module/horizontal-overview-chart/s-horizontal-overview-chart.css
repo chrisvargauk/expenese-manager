@@ -1,0 +1,54 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\000031}}
+.horizontal-overview-chart {
+  padding-top: 50%;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\000037}}
+  .horizontal-overview-chart .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000315}}
+  .horizontal-overview-chart .total {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000330}}
+  .horizontal-overview-chart .chart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000338}}
+  .horizontal-overview-chart .wrapper {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 10%;
+    padding-top: 0%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000349}}
+  .horizontal-overview-chart .space {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000357}}
+  .horizontal-overview-chart .bar {
+    background: greenyellow;
+    border-bottom: 1px solid green; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000363}}
+.horizontal-bar-chart-overview {
+  width: 100%;
+  height: 100%; }
+
+/*@ sourceMappingURL=s-horizontal-overview-chart.css.map */

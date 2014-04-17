@@ -1,13 +1,13 @@
 @import "icon-font";
-@import "../js/modal/s-modal";
-@import "../js/header/s-header";
-@import "../js/current-week-chart/s-current-week-chart";
-@import "../js/expense-list/s-expense-list";
-@import "../js/footer/s-footer";
-@import "../js/nav/s-nav";
-@import "../js/page-manager/s-page-manager";
-@import "../js/horizontal-overview-chart/s-horizontal-overview-chart";
-@import "../js/setting-form/s-setting-form";
+@import "../module/modal/s-modal";
+@import "../module/header/s-header";
+@import "../module/current-week-chart/s-current-week-chart";
+@import "../module/expense-list/s-expense-list";
+@import "../module/footer/s-footer";
+@import "../module/nav/s-nav";
+@import "../module/page-manager/s-page-manager";
+@import "../module/horizontal-overview-chart/s-horizontal-overview-chart";
+@import "../module/setting-form/s-setting-form";
 
 .page {
   padding-top: 12%;

@@ -1,0 +1,69 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\000032}}
+section.summary {
+  font-size: 1.6em;
+  line-height: 2.0em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000312}}
+  section.summary .list {
+    height: 100%;
+    overflow-y: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000318}}
+    section.summary .list .pusher.top {
+      padding-top: 30.8%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000321}}
+    section.summary .list .pusher.bottom {
+      padding-top: 16%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000327}}
+  section.summary .row {
+    border-bottom: 1px solid graytext;
+    position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000332}}
+  section.summary .category {
+    width: 50%;
+    float: left;
+    padding-left: 1.3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000338}}
+  section.summary .amount {
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding-right: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000345}}
+  section.summary .tap-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000353}}
+  section.summary .day {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.4em;
+    line-height: 1em;
+    vertical-align: baseline;
+    background: graytext;
+    color: white;
+    padding: 0.4em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000365}}
+  section.summary .total {
+    background: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid graytext; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000374}}
+    section.summary .total .pusher {
+      padding-top: 16%;
+      float: left;
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/expense-list\/s-expense-list\.scss}line{font-family:\0000380}}
+    section.summary .total .category {
+      padding-left: 0.5em; }
+
+/*@ sourceMappingURL=s-expense-list.css.map */

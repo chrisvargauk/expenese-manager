@@ -1,0 +1,41 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/header\/s-header\.scss}line{font-family:\000031}}
+header {
+  background: #404040;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  padding-top: 12%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/header\/s-header\.scss}line{font-family:\0000310}}
+  header .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/header\/s-header\.scss}line{font-family:\0000319}}
+    header .content .title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/header\/s-header\.scss}line{font-family:\0000331}}
+    header .content .icon-menu {
+      float: left;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      font-size: 2em;
+      line-height: 1.5em;
+      -webkit-transition: -webkit-transform 300ms; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/header\/s-header\.scss}line{font-family:\0000348}}
+      header .content .icon-menu.active {
+        -webkit-transform: translateX(-50%); }
+
+/*@ sourceMappingURL=s-header.css.map */

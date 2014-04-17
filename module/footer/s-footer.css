@@ -1,0 +1,33 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/footer\/s-footer\.scss}line{font-family:\000031}}
+footer {
+  border-top: 1px solid graytext;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  padding-top: 16%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/footer\/s-footer\.scss}line{font-family:\0000312}}
+  footer .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/footer\/s-footer\.scss}line{font-family:\0000320}}
+  footer input[type=text] {
+    width: 31%;
+    height: 80%;
+    float: left;
+    margin: 1.4% 0.5% 0 1.4%;
+    font-size: 1.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/footer\/s-footer\.scss}line{font-family:\0000329}}
+  footer button.add {
+    width: 31%;
+    height: 80%;
+    float: right;
+    margin: 1.4% 1.4% 0 0.5%;
+    font-size: 1.2em; }
+
+/*@ sourceMappingURL=s-footer.css.map */
