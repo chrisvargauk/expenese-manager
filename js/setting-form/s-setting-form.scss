@@ -1,0 +1,58 @@
+@mixin aspect-ratio($ratio-vertical: 100%) {
+  position: relative;
+  padding-top: $ratio-vertical;
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.setting-form {
+  padding: 0 3% 0 3%;
+
+  .button-list {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 0.5em;
+    text-align: right;
+  }
+
+  button {
+    border: none;
+    height: 2em;
+    width: 5em;
+    font-size: 1.4em;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+  }
+
+  .row {
+    @include aspect-ratio(15%);
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      color: #404040
+    }
+
+    label {
+      font-size: 1.3em;
+    }
+
+    input {
+      width: 50%;
+      height: 70%;
+    }
+  }
+}

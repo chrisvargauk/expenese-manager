@@ -321,10 +321,57 @@ section.page-manager {
   width: 100%;
   height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000314}}
+.setting-form {
+  padding: 0 3% 0 3%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000317}}
+  .setting-form .button-list {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 0.5em;
+    text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000323}}
+  .setting-form button {
+    border: none;
+    height: 2em;
+    width: 5em;
+    font-size: 1.4em;
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
+    background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+    background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+    background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000336}}
+  .setting-form .row {
+    position: relative;
+    padding-top: 15%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\000035}}
+    .setting-form .row .content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000339}}
+    .setting-form .row .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000345}}
+    .setting-form .row .title {
+      color: #404040; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000349}}
+    .setting-form .row label {
+      font-size: 1.3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/setting-form\/s-setting-form\.scss}line{font-family:\0000353}}
+    .setting-form .row input {
+      width: 50%;
+      height: 70%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000312}}
 .page {
   padding-top: 12%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/style\.scss}line{font-family:\0000315}}
   .page .history {
     overflow-y: auto; }
 

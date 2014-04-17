@@ -29,6 +29,8 @@ define(['jquery',
         'horizontal-overview-chart/v-horizontal-overview-chart',
         'horizontal-overview-chart/m-horizontal-overview-chart',
 
+        'setting-form/v-setting-form',
+
         'bootstrap',
         'lib/websql',
         'lib/pubsub-global',
@@ -60,7 +62,9 @@ define(['jquery',
 
                VHorizontalBarChartOverview,
                VHorizontalOverviewChart,
-               MHorizontalOverviewChart
+               MHorizontalOverviewChart,
+
+               VSettingForm
   ){
   var App = function () {
     console.log('App is instantiated.');
@@ -148,9 +152,16 @@ define(['jquery',
       });
     });
 
+    vPageManger.regPage( 'setting', function (idPage) {
+      var vSettingForm = new VSettingForm({
+        idPage: idPage
+      });
+    });
+
     // Load All Pages - in this context this makes sense
     vPageManger.loadPage('this-week');
     vPageManger.loadPage('history');
+    vPageManger.loadPage('setting');
 
     // Select a page to start with
     vPageManger.showPage('this-week');
