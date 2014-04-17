@@ -69,43 +69,6 @@ define(['jquery',
   var App = function () {
     console.log('App is instantiated.');
 
-    var resetWebSQL = function () {
-      websql.deleteTable('expenselist');
-
-      websql.createDatabase();
-
-      websql.run([
-        'CREATE TABLE IF NOT EXISTS expenselist (         ',
-        '  id INTEGER PRIMARY KEY AUTOINCREMENT,          ',
-        '  cid TEXT,                                      ',
-        '  category TEXT,                                 ',
-        '  amount TEXT,                                   ',
-        '  date INTEGER                                   ',
-        ')                                                '
-      ].join(''));
-
-      var getRandomArbitrary = function(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-
-      var categoryList = ['Hazev', 'TESCO', 'Brera', 'Car', 'Gym', 'GooglePlay'];
-
-      var decrementByNumDay = 0;
-      for(var i= 0; i<50; i++) {
-        decrementByNumDay += Math.round(Math.random(0, 1));
-
-        var dateCurrent = Date.now() - decrementByNumDay * 1000 * 60 * 60 * 24;
-        var categoryListIndex = Math.round(getRandomArbitrary(0, (categoryList.length-1)));
-        console.log(categoryListIndex);
-        var expense = {
-          category: categoryList[categoryListIndex],
-          amount: Math.round(Math.random() / 3 * 100),
-          date: dateCurrent
-        }
-        pubsub.publish('addExpense', expense);
-      };
-    };
-
     // Init Modal Window
     var vModal = new VModal({
       model: new MModal()
@@ -180,7 +143,7 @@ define(['jquery',
     };
 
     // TODO: remove when goes to production
-    window.resetWebSQL = resetWebSQL;
+    window.resetWebSQL = cExpenseList.resetWebSQL;
   };
 
   return App;
