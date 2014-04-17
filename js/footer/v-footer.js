@@ -44,8 +44,7 @@ define(['jquery', 'underscore', 'backbone', 'mustache',
 
           pubsub.publish('addExpense', {
             category: this.dom.$inputCategory.val(),
-            amount: this.dom.$inputAmount.val(),
-            date: Date.now()
+            amount: this.dom.$inputAmount.val()
           });
 
           this.dom.$inputCategory.val('');

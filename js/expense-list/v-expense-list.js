@@ -1,5 +1,5 @@
 define(['jquery', 'underscore', 'backbone', 'mustache',
-        'text!expense-list/expense-list-tmpl.html',
+        'text!expense-list/t-expense-list.html',
         'scrollable'
 ],
 function ($, _, Backbone, Mustache,

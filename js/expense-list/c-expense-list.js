@@ -17,6 +17,9 @@ define(['jquery', 'underscore', 'backbone',
     },
 
     addExpense: function (evtName, data) {
+      data.date = Date.now();
+      data.dayofweek = this.getDayChar( Date.now() );
+
       var mExpense = new MExpense(data);
       this.add( mExpense );
 
@@ -60,6 +63,37 @@ define(['jquery', 'underscore', 'backbone',
       ].join(''), undefined, callbackDone);
     },
 
+    getDayChar: function ( timestamp ) {
+      var dCurrent = new Date( timestamp ),
+        ctrDayOfWeek = dCurrent.getDay(),
+        dayOfWeek = '-';
+
+      switch (ctrDayOfWeek) {
+        case 1:
+          dayOfWeek = 'M';
+          break;
+        case 2:
+          dayOfWeek = 'T';
+          break;
+        case 3:
+          dayOfWeek = 'W';
+          break;
+        case 4:
+          dayOfWeek = 'T';
+          break;
+        case 5:
+          dayOfWeek = 'F';
+          break;
+        case 6:
+          dayOfWeek = 'S';
+          break;
+        case 7:
+          dayOfWeek = 'S';
+      };
+
+      return dayOfWeek;
+    },
+
     loadFromWebSQL: function () {
       var dNow = new Date(),
           dLastMidnight = new Date(dNow.getFullYear(), dNow.getMonth(), dNow.getDate()),
@@ -67,12 +101,14 @@ define(['jquery', 'underscore', 'backbone',
           dMonday = new Date(dLastMidnight.getTime() - (dayOfWeek-1) * 1000 * 60 * 60 * 24),
           timestampMonday = dMonday.getTime();
 
-      websql.run('SELECT * FROM expenselist WHERE date > ' + timestampMonday, function (item) {
+      websql.run('SELECT * FROM expenselist WHERE date > ' + timestampMonday + ' ORDER BY date', function (expense) {
         this.add(
           {
-            id: item.id,
-            category: item.category,
-            amount: item.amount
+            id: expense.id,
+            category: expense.category,
+            amount: expense.amount,
+            date: expense.date,
+            dayofweek: this.getDayChar( expense.date )
           }
         );
       }.bind(this));
