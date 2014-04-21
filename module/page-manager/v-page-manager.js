@@ -85,7 +85,7 @@ function ($, _, Backbone, Mustache,
       return jqPageContainer;
     },
 
-    regPage: function ( idPage, fn ) {
+    regPage: function ( idPage, fn, showByDefault) {
       var jqPageContainer = this.addPageContainer( idPage );
 
       var pages = this.model.get('pages');
@@ -96,6 +96,12 @@ function ($, _, Backbone, Mustache,
           pageContainer: jqPageContainer
         }
       );
+
+      this.loadPage( idPage );
+
+      if (showByDefault) {
+        this.showPage( idPage );
+      }
     },
 
     loadPage: function (idPage) {

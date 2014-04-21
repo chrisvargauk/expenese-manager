@@ -105,7 +105,7 @@ define(['jquery',
         model: cExpenseList,
         idPage: idPage
       });
-    });
+    }, true);
 
     // Reg History page components
     vPageManger.regPage( 'history', function (idPage) {
@@ -120,14 +120,6 @@ define(['jquery',
         idPage: idPage
       });
     });
-
-    // Load All Pages - in this context this makes sense
-    vPageManger.loadPage('this-week');
-    vPageManger.loadPage('history');
-    vPageManger.loadPage('setting');
-
-    // Select a page to start with
-    vPageManger.showPage('this-week');
 
     // Init Nav
     var vNav = new VNav({

@@ -137,7 +137,7 @@ define(['jquery', 'underscore', 'backbone',
 
       var decrementByNumDay = 0;
       for(var i= 0; i<50; i++) {
-        decrementByNumDay += Math.round(Math.random(0, 1));
+        decrementByNumDay += Math.round(Math.random());
 
         var dateCurrent = Date.now() - decrementByNumDay * 1000 * 60 * 60 * 24;
         var categoryListIndex = Math.round(getRandomArbitrary(0, (categoryList.length-1)));
