@@ -67,7 +67,7 @@ define(['jquery',
                VSettingForm
   ){
   var App = function () {
-    console.log('App is instantiated.');
+    console.log('App is instantiated');
 
     // Init Modal Window
     var vModal = new VModal({
