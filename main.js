@@ -21,7 +21,14 @@ require.config({
 });
 
 require(['app'], function (App) {
-  var app = new App();
+  var startApp = function() {
+    app = new App();
 
-  window.app = app;
+    // TODO: delete for production
+    window.app = app;
+  };
+
+//  document.addEventListener('deviceready', startApp, false);
+//  document.addEventListener('DOMContentLoaded', startApp, false);
+  startApp();
 });
