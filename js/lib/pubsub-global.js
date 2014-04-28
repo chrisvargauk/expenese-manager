@@ -1,24 +1,33 @@
-var pubsub = (function (){
-  var list = [];
+console.log('loaded: js/lib/pubsub-global.js');
 
-  var subscribe = function (evt, fn) {
-    list.push({
-      evt: evt,
-      fn: fn
-    });
-  };
+define(function () {
+  var pubsub = (function (){
+    var list = [];
 
-  var publish = function (evt, data) {
-    list.forEach(function (subscriber) {
-      if (subscriber.evt === evt) {
-        console.warn('Pubsub Evt Fired: ' + evt);
-        subscriber.fn(evt, data);
-      }
-    });
-  };
+    var subscribe = function (evt, fn) {
+      list.push({
+        evt: evt,
+        fn: fn
+      });
+    };
 
-  return {
-    subscribe: subscribe,
-    publish: publish
-  };
-}());
+    var publish = function (evt, data) {
+      console.warn('Pubsub Evt Fired: ' + evt);
+
+      list.forEach(function (subscriber) {
+        if (subscriber.evt === evt) {
+          subscriber.fn(evt, data);
+        }
+      });
+    };
+
+    return {
+      subscribe: subscribe,
+      publish: publish
+    };
+  }());
+
+  // TODO: resolve this
+  window.pubsub = pubsub;
+  return pubsub;
+});

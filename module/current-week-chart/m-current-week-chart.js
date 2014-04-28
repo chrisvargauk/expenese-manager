@@ -21,7 +21,6 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
     },
 
     updateModel: function (evtName, data) {
-      console.log('*************');
       console.log(data);
       var expenseTotal = 0,
         targetedTotal = 200;

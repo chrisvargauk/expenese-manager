@@ -1,0 +1,12 @@
+@mixin aspect-ratio($ratio-vertical: 100%) {
+  position: relative;
+  padding-top: $ratio-vertical;
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

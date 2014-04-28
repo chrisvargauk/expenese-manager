@@ -28,6 +28,10 @@ function ($, _, Backbone, Mustache,
         this.showPage(data.idPage)
       }.bind(this));
 
+      pubsub.subscribe('router.hashChange.page', function (evtName, data) {
+        this.showPage(data.value);
+      }.bind(this));
+
     },
 
     render: function () {

@@ -1,6 +1,8 @@
 <nav>
   {{#buttonList}}
-    <!--<button data-id="{{id}}">{{label}}</button>-->
-    <a href="#page/{{id}}" data-id="{{id}}">{{label}}</a>
+    <div class="wrapper">
+      <button class="content" data-id="{{id}}">{{label}}</button>
+    </div>
+    <!--<a href="#page/{{id}}" data-id="{{id}}">{{label}}</a>-->
   {{/buttonList}}
 </nav>

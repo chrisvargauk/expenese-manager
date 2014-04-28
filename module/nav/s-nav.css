@@ -1,52 +1,104 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\000031}}
-section.nav {
-  display: none;
-  -webkit-transition: opacity 300ms; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\000032}}
-  section.nav.bg {
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    margin: 0;
-    opacity: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\0000313}}
-    section.nav.bg.on {
-      opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\0000318}}
-  section.nav.enabled {
-    display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\0000324}}
-  section.nav nav {
-    background: white;
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    -webkit-transform: translate(-100%, 0);
-    -webkit-transition: -webkit-transform 300ms;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 12%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\0000337}}
-    section.nav nav.on {
-      -webkit-transform: translate(0, 0); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/js\/nav\/s-nav\.scss}line{font-family:\0000341}}
-    section.nav nav a {
-      display: block;
-      width: 100%;
-      border: none;
-      background: white;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding-top: 10%;
-      line-height: 0;
-      padding-bottom: 10%;
-      color: #404040;
-      font-size: 1.2em;
-      text-decoration: none;
-      font-weight: normal;
-      text-align: center; }
+/*
+Syntax error: Undefined mixin 'aspect-ratio'.
+        on line 59 of ./module/nav/s-nav.scss, in `aspect-ratio'
+        from line 59 of ./module/nav/s-nav.scss
 
-/*@ sourceMappingURL=s-nav.css.map */
+54:     //  font-weight: normal;
+55:     //  text-align: center;
+56:     //}
+57: 
+58:     .wrapper {
+59:       @include aspect-ratio(20%);
+60:     }
+61: 
+62:     button {
+63:       display: block;
+64:       width: 100%;
+
+Backtrace:
+./module/nav/s-nav.scss:59:in `aspect-ratio'
+./module/nav/s-nav.scss:59
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:256:in `visit_mixin'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `map'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:109:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:325:in `visit_rule'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `map'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:109:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:325:in `visit_rule'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `map'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:109:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:325:in `visit_rule'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `map'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:109:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:7:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/engine.rb:351:in `_render_with_sourcemap'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/engine.rb:282:in `render_with_sourcemap'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin/compiler.rb:323:in `update_stylesheet'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin/compiler.rb:182:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin/compiler.rb:179:in `each'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin/compiler.rb:179:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin/compiler.rb:278:in `watch'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/multi_listener.rb:117:in `initialize_adapter'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/adapters/polling.rb:56:in `call'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/adapters/polling.rb:56:in `poll'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/adapters/polling.rb:32:in `start'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/adapters/polling.rb:32:in `initialize'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/adapters/polling.rb:32:in `new'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/adapters/polling.rb:32:in `start'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/vendor/listen/lib/listen/multi_listener.rb:44:in `start'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin/compiler.rb:286:in `watch'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin.rb:107:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/plugin.rb:107:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/exec.rb:476:in `watch_or_update'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/exec.rb:317:in `process_result'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/exec.rb:41:in `parse'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/../lib/sass/exec.rb:21:in `parse!'
+/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.121/bin/sass:9
+/usr/bin/sass:19:in `load'
+/usr/bin/sass:19
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'aspect-ratio'.\A         on line 59 of ./module/nav/s-nav.scss, in `aspect-ratio'\A         from line 59 of ./module/nav/s-nav.scss\A \A 54:     //  font-weight: normal;\A 55:     //  text-align: center;\A 56:     //}\A 57: \A 58:     .wrapper {\A 59:       @include aspect-ratio(20%);\A 60:     }\A 61: \A 62:     button {\A 63:       display: block;\A 64:       width: 100%;"; }

@@ -5,6 +5,8 @@ define(['jquery',
         'backbone',
         'mustache',
 
+        'js/lib/pubsub-global',
+
         'module/modal/v-modal',
         'module/modal/m-modal',
 
@@ -33,12 +35,12 @@ define(['jquery',
 
         'bootstrap',
         'js/lib/websql',
-        'js/lib/pubsub-global',
         'js/lib/polyfill-get-week'
   ], function( $,
                _,
                Backbone,
                Mustache,
+               pubsub,
 
                VModal,
                MModal,
@@ -126,7 +128,7 @@ define(['jquery',
       model: new MNav()
     });
 
-    Backbone.history.start();
+    pubsub.publish('router.start');
 
     // TODO: remove when goes to production
     window._reveal = {
