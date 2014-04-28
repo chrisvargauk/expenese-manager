@@ -32,6 +32,9 @@ function ($, _, Backbone, Mustache,
 
       this.domRef.el.on('webkitTransitionEnd', this.transitionEnd.bind(this));
 
+      // Dont use jQuery on method to avoid annoying alert on stock Android
+      window.addEventListener('hashchange', this.startSlideOut.bind(this));
+
       if (typeof this.model === 'undefined')
         return true;
 
@@ -45,7 +48,7 @@ function ($, _, Backbone, Mustache,
       jqWrapper.appendTo('body');
       this.domRef.el = jqWrapper;
 
-      this.addEventListener();
+//      this.addEventListener();
 
       return this;
     },
