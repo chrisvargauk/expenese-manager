@@ -85,7 +85,6 @@ header {
       -moz-justify-content: center;
       -ms-justify-content: center;
       -webkit-box-pack: center;
-      /* For -webkit-box - some Android version */
       justify-content: center;
       -webkit-align-items: center;
       -moz-align-items: center;
@@ -339,36 +338,104 @@ section.page-manager {
     right: 0;
     left: 0;
     height: 40%;
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -webkit-box-align: center;
+    /* For -webkit-box - some Android version */
     align-items: center;
     font-weight: bold; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000330}}
   .horizontal-overview-chart .chart {
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -webkit-box-pack: center;
     justify-content: center;
-    align-items: flex-end;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -webkit-box-align: center;
+    /* For -webkit-box - some Android version */
+    align-items: center;
     height: 100%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000338}}
   .horizontal-overview-chart .wrapper {
     height: 100%;
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
     display: flex;
-    flex-flow: column;
-    text-align: center;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -webkit-box-align: center;
+    /* For -webkit-box - some Android version */
+    align-items: center;
     width: 10%;
     padding-top: 0%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000349}}
   .horizontal-overview-chart .space {
+    -webkit-box-flex: 1;
     flex: 1 1 auto;
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
     display: flex;
-    flex-flow: column;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -webkit-box-pack: flex-end;
+    -webkit-box-pack: end;
     justify-content: flex-end; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000357}}
   .horizontal-overview-chart .bar {
     background: greenyellow;
-    border-bottom: 1px solid green; }
+    border-bottom: 1px solid green;
+    width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/horizontal-overview-chart\/s-horizontal-overview-chart\.scss}line{font-family:\0000364}}
 .horizontal-bar-chart-overview {
   width: 100%;
   height: 100%; }
@@ -404,18 +471,39 @@ section.page-manager {
       right: 0;
       bottom: 0;
       left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000326}}
-    .setting-form .row .content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000327}}
+    .setting-form .row .content .wrapper-label {
+      float: left;
+      display: table;
+      height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/lib\/utility\.scss}line{font-family:\0000318}}
+      .setting-form .row .content .wrapper-label > * {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000332}}
+    .setting-form .row .content .wrapper-input {
+      float: right;
+      width: 50%;
+      display: table;
+      height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/css\/lib\/utility\.scss}line{font-family:\0000318}}
+      .setting-form .row .content .wrapper-input > * {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000337}}
+      .setting-form .row .content .wrapper-input input {
+        display: block;
+        width: 100%;
+        margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000345}}
     .setting-form .row .title {
       color: #404040; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000349}}
     .setting-form .row label {
       font-size: 1.3em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000353}}
     .setting-form .row input {
       width: 50%;
       height: 70%; }

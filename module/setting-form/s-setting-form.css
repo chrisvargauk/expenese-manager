@@ -11,9 +11,9 @@ Syntax error: Undefined mixin 'aspect-ratio'.
 24:     @include aspect-ratio(15%);
 25: 
 26:     .content {
-27:       display: flex;
-28:       justify-content: space-between;
-29:       align-items: center;
+27:       .wrapper-label {
+28:         float: left;
+29:         @include vertical-text-align(center);
 
 Backtrace:
 ./module/setting-form/s-setting-form.scss:24:in `aspect-ratio'
@@ -90,4 +90,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'aspect-ratio'.\A         on line 24 of ./module/setting-form/s-setting-form.scss, in `aspect-ratio'\A         from line 24 of ./module/setting-form/s-setting-form.scss\A \A 19:     background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);\A 20:     background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);\A 21:   }\A 22: \A 23:   .row {\A 24:     @include aspect-ratio(15%);\A 25: \A 26:     .content {\A 27:       display: flex;\A 28:       justify-content: space-between;\A 29:       align-items: center;"; }
+  content: "Syntax error: Undefined mixin 'aspect-ratio'.\A         on line 24 of ./module/setting-form/s-setting-form.scss, in `aspect-ratio'\A         from line 24 of ./module/setting-form/s-setting-form.scss\A \A 19:     background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);\A 20:     background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);\A 21:   }\A 22: \A 23:   .row {\A 24:     @include aspect-ratio(15%);\A 25: \A 26:     .content {\A 27:       .wrapper-label {\A 28:         float: left;\A 29:         @include vertical-text-align(center);"; }

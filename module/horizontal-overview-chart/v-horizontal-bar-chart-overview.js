@@ -92,7 +92,8 @@ function ($, _, Backbone, Mustache,
 
     loadWeekList: function () {
       var createWeek = function () {
-        var week = Object.create(null);
+//        var week = Object.create(null);
+        var week = Object.create({});
 
         week.monday = 0;
         week.tuesday = 0;

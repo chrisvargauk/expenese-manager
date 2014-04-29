@@ -24,9 +24,22 @@
     @include aspect-ratio(15%);
 
     .content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      .wrapper-label {
+        float: left;
+        @include vertical-text-align(center);
+      }
+
+      .wrapper-input {
+        float: right;
+        width: 50%;
+        @include vertical-text-align(center);
+
+        input {
+          display: block;
+          width: 100%;
+          margin: 0;
+        }
+      }
     }
 
     .title {

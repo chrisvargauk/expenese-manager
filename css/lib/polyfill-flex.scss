@@ -10,7 +10,18 @@
   -webkit-justify-content: $value;
   -moz-justify-content: $value;
   -ms-justify-content: $value;
-  -webkit-box-pack: $value; /* For -webkit-box - some Android version */
+
+  -webkit-box-pack: $value;
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+  }
+  @if $value == flex-end {
+    -webkit-box-pack: end;
+  }
+  @if $value == space-between {
+    -webkit-box-pack: justify; // carefull, this is not the same, this is just a fallback
+  }
+
   justify-content: $value;
 }
 
@@ -20,4 +31,19 @@
   -ms-align-items: center;
   -webkit-box-align: center; /* For -webkit-box - some Android version */
   align-items: center;
+}
+
+@mixin flex-direction-row() {
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+}
+
+@mixin flex-direction-column() {
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+
+@mixin flex-auto() {
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
 }

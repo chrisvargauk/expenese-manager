@@ -10,3 +10,23 @@
     left: 0;
   }
 }
+
+@mixin vertical-text-align($position: center) {
+  display: table;
+  height: 100%;
+
+  > * {
+    display: table-cell;
+    height: 100%;
+
+    @if $position == center {
+      vertical-align: middle;
+    }
+    @if $position == start {
+      vertical-align: top;
+    }
+    @if $position == end {
+      vertical-align: bottom;
+    }
+  }
+}

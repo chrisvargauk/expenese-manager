@@ -20,43 +20,44 @@
 
     height: 40%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
 
     font-weight: bold;
   }
 
   .chart {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(flex-end);
 
     height: 100%;
   }
 
   .wrapper {
     height: 100%;
-    display: flex;
-    flex-flow: column;
+    @include display-flex;
+    @include flex-direction-column;
 
-    text-align: center;
+    @include align-items(center);
 
     width: 10%;
     padding-top: 0%;
   }
 
   .space {
-    flex: 1 1 auto;
+    @include flex-auto();
 
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
+    @include display-flex;
+    @include flex-direction-column;
+    @include justify-content(flex-end);
   }
 
   .bar {
     background: greenyellow;
     border-bottom: 1px solid green;
+    width: 100%;
   }
 }
 
