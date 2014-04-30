@@ -17,8 +17,12 @@ define(['jquery', 'underscore', 'backbone',
     },
 
     addExpense: function (evtName, data) {
-      data.date = Date.now();
-      data.dayofweek = this.getDayChar( Date.now() );
+      if (typeof data.date == 'undefined') {
+        data.date = Date.now();
+        data.dayofweek = this.getDayChar( Date.now() );
+      } else {
+        data.dayofweek = this.getDayChar( data.date );
+      }
 
       var mExpense = new MExpense(data);
       this.add( mExpense );
@@ -115,19 +119,19 @@ define(['jquery', 'underscore', 'backbone',
     },
 
     resetWebSQL: function () {
-      websql.deleteTable('expenselist');
+//      websql.deleteTable('expenselist');
 
       websql.createDatabase();
 
-      websql.run([
-        'CREATE TABLE IF NOT EXISTS expenselist (         ',
-        '  id INTEGER PRIMARY KEY AUTOINCREMENT,          ',
-        '  cid TEXT,                                      ',
-        '  category TEXT,                                 ',
-        '  amount TEXT,                                   ',
-        '  date INTEGER                                   ',
-        ')                                                '
-      ].join(''));
+//      websql.run([
+//        'CREATE TABLE IF NOT EXISTS expenselist (         ',
+//        '  id INTEGER PRIMARY KEY AUTOINCREMENT,          ',
+//        '  cid TEXT,                                      ',
+//        '  category TEXT,                                 ',
+//        '  amount TEXT,                                   ',
+//        '  date INTEGER                                   ',
+//        ')                                                '
+//      ].join(''));
 
       var getRandomArbitrary = function(min, max) {
         return Math.random() * (max - min) + min;
