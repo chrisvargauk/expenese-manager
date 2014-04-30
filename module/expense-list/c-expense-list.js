@@ -31,10 +31,17 @@ define(['jquery', 'underscore', 'backbone',
     },
 
     addExpenseToWebSQL: function (mExpense) {
+      var setIdOnExpense = function () {
+        websql.run('SELECT last_insert_rowid()', function(item) {
+          mExpense.set('id', item['last_insert_rowid()']);
+          pubsub.publish('expenseList.updated');
+        });
+      }.bind(this);
+
       websql.run([
         'INSERT INTO expenselist (cid, category, amount, date) ',
         'VALUES ("' + mExpense.cid + '", "' + mExpense.get('category') + '", "' + mExpense.get('amount') + '", ' + mExpense.get('date') + ')'
-      ].join(''));
+      ].join(''), undefined, setIdOnExpense);
     },
 
     deleteExpense: function (evtName, data) {
@@ -46,7 +53,9 @@ define(['jquery', 'underscore', 'backbone',
     },
 
     deleteExpenseFromWebSQL: function (id) {
-      websql.run("DELETE FROM expenselist WHERE id="+id);
+      websql.run("DELETE FROM expenselist WHERE id="+id, undefined, function () {
+        pubsub.publish('expenseList.updated');
+      });
     },
 
     publishNewExpenseList: function () {

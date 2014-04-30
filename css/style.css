@@ -497,13 +497,16 @@ section.page-manager {
         display: block;
         width: 100%;
         margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000344}}
+    .setting-form .row .content button {
+      float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000349}}
     .setting-form .row .title {
       color: #404040; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000353}}
     .setting-form .row label {
       font-size: 1.3em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/krisztianvarga\/Dropbox\/programing\/home\/webroot\/projects\/expense-manager\/module\/setting-form\/s-setting-form\.scss}line{font-family:\0000357}}
     .setting-form .row input {
       width: 50%;
       height: 70%; }

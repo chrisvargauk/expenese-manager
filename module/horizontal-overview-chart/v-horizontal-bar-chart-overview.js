@@ -29,6 +29,8 @@ function ($, _, Backbone, Mustache,
 
       this.loadWeekList();
 
+      pubsub.subscribe('expenseList.updated', this.refresh.bind(this));
+
       if (typeof this.model === 'undefined')
         return true;
 
@@ -208,6 +210,11 @@ function ($, _, Backbone, Mustache,
         console.log(day);
         dayList.push( day );
       }, processDayList);
+    },
+
+    refresh: function () {
+      this.el.empty();
+      this.loadWeekList();
     }
   });
 

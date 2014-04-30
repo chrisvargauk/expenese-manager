@@ -71,13 +71,39 @@ function ($, _, Backbone, Mustache,
 
       // Suggested approach to check what was tapped
       switch ( $(target).data('id') ) {
-        case 'boilerplate-item':
-          console.log('boilerplate-item was tapped');
+        case 'btn-reset-data':
+          console.log('btn-reset-data was tapped');
+          this.resetData();
+          break;
+
+        case 'btn-add-random-data':
+          console.log('btn-add-random-data');
+          this.addRandomData();
           break;
 
         case 'some-other-item':
           break;
       }
+    },
+
+    resetData: function () {
+      websql.deleteTable('expenselist');
+
+      websql.createDatabase();
+
+      websql.run([
+        'CREATE TABLE IF NOT EXISTS expenselist (         ',
+        '  id INTEGER PRIMARY KEY AUTOINCREMENT,          ',
+        '  cid TEXT,                                      ',
+        '  category TEXT,                                 ',
+        '  amount TEXT,                                   ',
+        '  date INTEGER                                   ',
+        ')                                                '
+      ].join(''));
+    },
+
+    addRandomData: function () {
+      resetWebSQL();
     }
   });
 
