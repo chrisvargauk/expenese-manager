@@ -1,72 +1,68 @@
-console.log('loaded: js/app.js');
-
 define(['jquery',
-        'underscore',
-        'backbone',
-        'mustache',
+  'underscore',
+  'backbone',
+  'mustache',
 
-        'js/lib/pubsub-global',
+  'js/lib/pubsub-global',
 
-        'module/modal/v-modal',
-        'module/modal/m-modal',
+  'module/modal/v-modal',
+  'module/modal/m-modal',
 
-        'module/nav/v-nav',
-        'module/nav/m-nav',
+  'module/nav/v-nav',
+  'module/nav/m-nav',
 
-        'module/page-manager/v-page-manager',
-        'module/page-manager/m-page-manager',
-        'module/page-manager/r-page-manager',
+  'module/page-manager/v-page-manager',
+  'module/page-manager/m-page-manager',
 
-        'module/header/v-header',
+  'module/header/v-header',
 
-        'module/current-week-chart/v-current-week-chart',
-        'module/current-week-chart/m-current-week-chart',
+  'module/current-week-chart/v-current-week-chart',
+  'module/current-week-chart/m-current-week-chart',
 
-        'module/expense-list/v-expense-list',
-        'module/expense-list/c-expense-list',
+  'module/expense-list/v-expense-list',
+  'module/expense-list/c-expense-list',
 
-        'module/footer/v-footer',
+  'module/footer/v-footer',
 
-        'module/horizontal-overview-chart/v-horizontal-bar-chart-overview',
-        'module/horizontal-overview-chart/v-horizontal-overview-chart',
-        'module/horizontal-overview-chart/m-horizontal-overview-chart',
+  'module/horizontal-overview-chart/v-horizontal-bar-chart-overview',
+  'module/horizontal-overview-chart/v-horizontal-overview-chart',
+  'module/horizontal-overview-chart/m-horizontal-overview-chart',
 
-        'module/setting-form/v-setting-form',
+  'module/setting-form/v-setting-form',
 
-        'bootstrap',
-        'js/lib/websql',
-        'js/lib/polyfill-get-week'
-  ], function( $,
-               _,
-               Backbone,
-               Mustache,
-               pubsub,
+  'bootstrap',
+  'js/lib/websql',
+  'js/lib/polyfill-get-week'
+], function( $,
+             _,
+             Backbone,
+             Mustache,
+             pubsub,
 
-               VModal,
-               MModal,
+             VModal,
+             MModal,
 
-               VNav,
-               MNav,
+             VNav,
+             MNav,
 
-               VPageManager,
-               MPageManager,
-               RPageManager,
+             VPageManager,
+             MPageManager,
 
-               VHeader,
+             VHeader,
 
-               VCurrentWeekChart,
-               MCurrentWeekChart,
+             VCurrentWeekChart,
+             MCurrentWeekChart,
 
-               VExpenseList,
-               CExpenseList,
+             VExpenseList,
+             CExpenseList,
 
-               VFooter,
+             VFooter,
 
-               VHorizontalBarChartOverview,
-               VHorizontalOverviewChart,
-               MHorizontalOverviewChart,
+             VHorizontalBarChartOverview,
+             VHorizontalOverviewChart,
+             MHorizontalOverviewChart,
 
-               VSettingForm
+             VSettingForm
   ){
   var App = function () {
     console.log('App is instantiated');
@@ -128,7 +124,7 @@ define(['jquery',
       model: new MNav()
     });
 
-    pubsub.publish('router.start');
+    pubsub.publish('App.loaded');
 
     // TODO: remove when goes to production
     window._reveal = {
@@ -142,3 +138,5 @@ define(['jquery',
 
   return App;
 });
+
+console.log('loaded: js/app.js');

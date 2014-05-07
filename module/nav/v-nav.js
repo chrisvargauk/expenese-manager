@@ -26,9 +26,9 @@ function ($, _, Backbone, Mustache,
 
       this.domRef.jqNav = this.domRef.el.find('nav');
 
-      pubsub.subscribe('navStartSlideIn',  this.startSlideIn.bind(this));
-      pubsub.subscribe('navStartSlideOut', this.startSlideOut.bind(this));
-      pubsub.subscribe('toggleNav', this.toggleNav.bind(this));
+      pubsub.subscribe('navStartSlideIn',   this.startSlideIn.bind(this));
+      pubsub.subscribe('navStartSlideOut',  this.startSlideOut.bind(this));
+      pubsub.subscribe('toggleNav',         this.toggleNav.bind(this));
 
       this.domRef.el.on('webkitTransitionEnd', this.transitionEnd.bind(this));
 
@@ -71,7 +71,7 @@ function ($, _, Backbone, Mustache,
         var evtType = this.Tap.evtType,
           target = evt.target;
 
-        view.handleDomEvent(evtType, target, evt);
+        view.handleDomEvent.apply(view, [evtType, target, evt]);
       });
     },
 
@@ -83,7 +83,7 @@ function ($, _, Backbone, Mustache,
         if ($(target).data('id') !== button.id)
           return;
 
-        button.action.call(this);
+        button.action.call(this.model);
       }.bind(this));
     },
 

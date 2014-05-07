@@ -7,7 +7,8 @@
  */
 
 define(['jquery'], function($) {
-  var Router = function () {
+  return new function () {
+    // Settings
     this.setting = {
       separator: '&',
       delimiter: '/'
@@ -15,10 +16,10 @@ define(['jquery'], function($) {
 
     this._init = function () {
       // Setup event listeners
-      window.addEventListener('hashchange', this.handleHashChange.bind(this), false);
-      pubsub.subscribe('router.setHashProp', this.setHashProp.bind(this));
+      window.addEventListener('hashchange',     this.handleHashChange.bind(this), false);
+
       // Reg initial hash
-      pubsub.subscribe('router.start', this.handleHashChange.bind(this));
+      pubsub.subscribe('App.loaded',            this.handleHashChange.bind(this)       );
     };
 
     this.model= (function () {
@@ -30,22 +31,21 @@ define(['jquery'], function($) {
 
       var set = function (name, value) {
         _data[name] = value;
-        pubsub.publish('router.hashChange.' + name, {
-          name: name,
-          value: value
-        });
         return this;
-      }
+      };
 
       return {
-        _data: _data,
+        _data: _data, // TODO: remove for prod.
         get: get,
         set: set
-      }
+      };
     }());
 
     this.handleHashChange = function () {
       var hashToProcess = location.hash.replace('#', '');
+
+      if (hashToProcess === '')
+        return false;
 
       var hashItemList = hashToProcess.split(this.setting.separator);
       hashItemList.forEach(function (hashItem) {
@@ -55,19 +55,23 @@ define(['jquery'], function($) {
 
         var hashItemCurrent = this.model.get(hashItemKey);
 
+        // Reg new Hash Item if given Hash Item is not in model
         if (typeof hashItemCurrent === 'undefined' || hashItemCurrent !== hashItemValue) {
-          this.model.set(hashItemKey, hashItemValue);
+          this.setHashProp(hashItemKey, hashItemValue, true);
         }
       }.bind(this));
     }
 
-    this.setHashProp = function (evt, data) {
-      Object.keys(data).forEach(function (key) {
-        var value = data[key];
-        this.model.set(key, value);
-      }.bind(this));
+    this.setHashProp = function (key, value, dontGenerate) {
+      this.model.set(key, value);
 
-      this.generateNewHash();
+      if (!dontGenerate)
+        this.generateNewHash();
+
+      pubsub.publish('router.hashChange.' + key, {
+        name: key,
+        value: value
+      });
     }
 
     this.generateNewHash = function () {
@@ -87,12 +91,4 @@ define(['jquery'], function($) {
 
     this._init();
   };
-
-  var router = new Router();
-  window.router = router;
-
-  // TODO: once loaded event is implemented, use it for handling "Backbone.history.start();" here.
-  //Backbone.history.start();
-
-  return router;
 });

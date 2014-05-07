@@ -7,7 +7,11 @@
 
 console.log('MNav is loaded.');
 
-define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
+define(['jquery', 'underscore', 'backbone',
+  'module/nav/r-page-manager'
+  ], function($, _, Backbone,
+  router
+  ) {
   var MNav = Backbone.Model.extend({
     initialize: function () {
       console.log('MNav initialized');
@@ -16,6 +20,10 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
         console.log('*******************' + this.get('hashComponentList') + ' is now the value for name');
         this.generateNewHash();
       });
+
+      pubsub.subscribe('nav.goToPage', this.goToPage.bind(this));
+
+      window.router = router;
     },
 
     defaults: {
@@ -26,11 +34,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'This Week',
           action: function () {
             console.log('This Week btn');
-            pubsub.publish('navStartSlideOut');
-            // pubsub.publish('showPage', {idPage: 'this-week'});
-
-//            this.model.goToPage.call(this.model, 'this-week');
-            pubsub.publish('router.setHashProp', {'page': 'this-week'});
+            this.goToPage('this-week');
           }
         },
         {
@@ -38,11 +42,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'History',
           action: function () {
             console.log('History btn');
-            pubsub.publish('navStartSlideOut');
-            // pubsub.publish('showPage', {idPage: 'history'});
-
-//            this.model.goToPage.call(this.model, 'history');
-            pubsub.publish('router.setHashProp', {'page': 'history'});
+            this.goToPage('history');
           }
         },
         {
@@ -50,35 +50,15 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
           label: 'Settings',
           action: function () {
             console.log('Settings btn clicked');
-            pubsub.publish('navStartSlideOut');
-
-//            this.model.goToPage.call(this.model, 'setting');
-            pubsub.publish('router.setHashProp', {'page': 'setting'});
+            this.goToPage('setting');
           }
         }
       ]
     },
 
     goToPage: function (idPage) {
-      // TODO: This is a crap solution, I would be better of using native solution for model
-      var hashComponentList = jQuery.extend(true, {}, this.get('hashComponentList'));
-      hashComponentList['page'] = idPage;
-      this.set('hashComponentList', hashComponentList);
-    },
-
-    generateNewHash: function () {
-      console.log('this.generateNewHash() called');
-//      var page = this.get('hashComponentList').page;
-//      Backbone.history.navigate('#page/' + page);
-
-      var hash = '#';
-      var hashComponentList = this.get('hashComponentList');
-      $(Object.keys(hashComponentList)).each(function (index, key) {
-        var value = hashComponentList[key];
-        hash += key + '/' + value + '&';
-      });
-
-      Backbone.history.navigate(hash);
+      router.setHashProp('page', idPage);
+      pubsub.publish('navStartSlideOut');
     },
 
     toJSON: function() {
