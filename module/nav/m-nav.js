@@ -7,11 +7,7 @@
 
 console.log('MNav is loaded.');
 
-define(['jquery', 'underscore', 'backbone',
-  'module/nav/r-page-manager'
-  ], function($, _, Backbone,
-  router
-  ) {
+define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
   var MNav = Backbone.Model.extend({
     initialize: function () {
       console.log('MNav initialized');
@@ -20,10 +16,6 @@ define(['jquery', 'underscore', 'backbone',
         console.log('*******************' + this.get('hashComponentList') + ' is now the value for name');
         this.generateNewHash();
       });
-
-      pubsub.subscribe('nav.goToPage', this.goToPage.bind(this));
-
-      window.router = router;
     },
 
     defaults: {
@@ -54,11 +46,6 @@ define(['jquery', 'underscore', 'backbone',
           }
         }
       ]
-    },
-
-    goToPage: function (idPage) {
-      router.setHashProp('page', idPage);
-      pubsub.publish('navStartSlideOut');
     },
 
     toJSON: function() {

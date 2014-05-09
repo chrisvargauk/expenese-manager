@@ -8,10 +8,15 @@
 console.log('nav is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!module/nav/t-nav.html'
+  'text!module/nav/t-nav.html',
+  'module/nav/r-page-manager',
+
+  'tap'
 ],
 function ($, _, Backbone, Mustache,
-          tmpl) {
+          tmpl,
+          router
+  ) {
 
   var VNav = Backbone.View.extend({
     initialize: function () {
@@ -25,10 +30,6 @@ function ($, _, Backbone, Mustache,
       this.renderUpdate();
 
       this.domRef.jqNav = this.domRef.el.find('nav');
-
-      pubsub.subscribe('navStartSlideIn',   this.startSlideIn.bind(this));
-      pubsub.subscribe('navStartSlideOut',  this.startSlideOut.bind(this));
-      pubsub.subscribe('toggleNav',         this.toggleNav.bind(this));
 
       this.domRef.el.on('webkitTransitionEnd', this.transitionEnd.bind(this));
 
@@ -83,7 +84,7 @@ function ($, _, Backbone, Mustache,
         if ($(target).data('id') !== button.id)
           return;
 
-        button.action.call(this.model);
+        button.action.call(this);
       }.bind(this));
     },
 
@@ -145,6 +146,11 @@ function ($, _, Backbone, Mustache,
       } else if (this.state === 'slidingOut') {
         this.finishSlideOut();
       }
+    },
+
+    goToPage: function (idPage) {
+      router.setHashProp('page', idPage);
+      this.startSlideOut();
     },
 
     state: 'off'

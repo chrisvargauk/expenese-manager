@@ -8,10 +8,13 @@
 console.log('VHeader is loaded');
 
 define(['jquery', 'underscore', 'backbone', 'mustache',
-  'text!module/header/t-header.html'
+  'text!module/header/t-header.html',
+  'module/nav/o-nav'
 ],
 function ($, _, Backbone, Mustache,
-          tmpl) {
+          tmpl,
+          oNav
+  ) {
 
   var VHeader = Backbone.View.extend({
     initialize: function () {
@@ -76,7 +79,6 @@ function ($, _, Backbone, Mustache,
         case 'icon-menu':
           console.log('icon-menu was tapped');
           this.toggleMenuIcon();
-//          pubsub.publish('navStartSlideIn');
           break;
 
         case 'some-other-item':
@@ -91,7 +93,6 @@ function ($, _, Backbone, Mustache,
       this.el.find('.icon-menu').addClass('active');
       this.stateMenuIcon = 'on';
 
-      pubsub.publish('navStartSlideIn');
     },
 
     slideIn: function () {
@@ -100,15 +101,15 @@ function ($, _, Backbone, Mustache,
 
       this.el.find('.icon-menu').removeClass('active');
       this.stateMenuIcon = 'off';
-
-      pubsub.publish('navStartSlideOut');
     },
 
     toggleMenuIcon: function () {
       if (this.stateMenuIcon === 'off') {
         this.slideOut();
+        oNav.view.startSlideIn();
       } else {
         this.slideIn();
+        oNav.view.startSlideOut();
       }
     },
 

@@ -8,8 +8,7 @@ define(['jquery',
   'module/modal/v-modal',
   'module/modal/m-modal',
 
-  'module/nav/v-nav',
-  'module/nav/m-nav',
+  'module/nav/o-nav',
 
   'module/page-manager/v-page-manager',
   'module/page-manager/m-page-manager',
@@ -42,8 +41,7 @@ define(['jquery',
              VModal,
              MModal,
 
-             VNav,
-             MNav,
+             oNav,
 
              VPageManager,
              MPageManager,
@@ -117,11 +115,6 @@ define(['jquery',
       var vSettingForm = new VSettingForm({
         idPage: idPage
       });
-    });
-
-    // Init Nav
-    var vNav = new VNav({
-      model: new MNav()
     });
 
     pubsub.publish('App.loaded');
