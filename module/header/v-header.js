@@ -106,10 +106,10 @@ function ($, _, Backbone, Mustache,
     toggleMenuIcon: function () {
       if (this.stateMenuIcon === 'off') {
         this.slideOut();
-        oNav.view.startSlideIn();
+        oNav.startSlideIn();
       } else {
         this.slideIn();
-        oNav.view.startSlideOut();
+        oNav.startSlideOut();
       }
     },
 

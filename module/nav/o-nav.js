@@ -14,18 +14,7 @@ define([
     MNav
   ) {
 
-  ONav = function () {
-    if ( ONav.prototype._singletonInstance ) {
-      return ONav.prototype._singletonInstance;
-    }
-    ONav.prototype._singletonInstance = this;
-
-    this.model = new MNav();
-
-    this.view = new VNav({
-      model: this.model
-    });
-  }
-
-  return new ONav();
+  return new VNav({
+    model: new MNav()
+  });
 });
